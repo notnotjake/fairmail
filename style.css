@@ -3,12 +3,17 @@ html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
 }
+
+:root{
+	--mobile: 575px;
+}
+
 html, body, * {
 	margin: 0;
 	padding: 0;
 }
 body {
-	background-color: #FFFFFF;
+	background-color: #F7F6F5;
 }
 a, a:hover, a:visited, a:active {
 	text-decoration: none;
@@ -16,11 +21,12 @@ a, a:hover, a:visited, a:active {
 }
 
 header {
-	width: 400px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 34px auto 26px;
+	padding: 34px 0 26px;
+	background-color: #FFFFFF;
 }
 
 nav {
@@ -43,7 +49,7 @@ nav a:active {
 }
 .hero {
 	height: 225px;
-	width: 100%;
+	width: clamp(200px, 95%, 410px);
 	justify-content: center;
 	align-items: center;
 	position: relative;
@@ -97,55 +103,179 @@ nav a:active {
 	margin-bottom: 8px;
 }
 
-main {
-	padding: 40px 0;
-	height: 900px;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+main {	
+	width: calc(100% - 34px);
+	max-width: 1000px;
+	margin: 52px auto;
 	
-	background-color: #F7F6F5;
 	color: #171717;
 }
 main h1 {
 	font-size: 2.5em;
 }
 
-.overview {
-	display: flex;
-	width: calc(100vw - 14px);
-	max-width: 850px;
+.color-purple {
+	color: #745cf8
 }
-.overview h1 {
+
+
+
+
+
+
+
+
+/* Overview */
+
+#overview {
+	display: flex;
+	flex-direction: row;
+	margin: -10px;
+}
+#overview > * {
+	margin: 10px;
+	flex: 1 0 0;
+}
+#overview .header {
+	text-align: right;
+}
+@media (max-width: 575px) {
+	#overview {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	#overview .header {
+		text-align: left;
+	}
+}
+
+
+
+
+
+
+
+/* Questions */
+
+#questions {
+	display: flex;
+	flex-direction: row;
+	margin: -10px;
+}
+#questions > * {
+	margin: 10px;
+	flex: 1 0 0;
+}
+
+
+#questions .header {
+	text-align: right;
+	border: 1px solid blue;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+}
+#questions .header  * {
+	border: 1px solid purple;
+}
+
+
+#questions .header > div {
+	position: absolute;
+	align-self: center;
+	display: flex;
+	left: 50%;
+	transform: translate(-50%, 0); 
+	font-family: 'courier';
+}
+#questions .header h1:nth-child(1) {
+	/* left '?' */
+	transform: rotate(-24deg);
+	margin-right: -12px;
+	margin-top: 8px;
+	color: #8a8aed;
+	font-size: 43pt;
+}
+#questions .header h1:nth-child(2) {
+	/* center '?' */
+	transform: rotate(0deg);
+	color: #6a6aec;
+	font-size: 56pt;
+}
+#questions .header h1:nth-child(3) {
+	/* right '?' */
+	transform: rotate(9deg);
+	margin-left: -3px;
+	margin-top: 8px;
+	color: #9292f3;
+	font-size: 43pt;
+}
+
+
+#questions .header a {
+	padding: 10px 24px;
+	border-radius: 12px;
+	background-color: #d0e6fd;
+	color: #6c7f93;
+	font-weight: 550;
+	font-style: normal;
+}
+#questions .header a.focus {
+	background-color: #3693f6;
+	color: #e2edff;
+}
+
+
+#questions .content {
+	background-color: #E8E3E0;
+	border-radius: 12px;
+	padding: 35px 26px 35px;
+}
+@media (max-width: 700px) {
+	#questions {
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	#questions .header {
+		text-align: left;
+	}
+}
+
+
+
+
+
+
+
+
+
+#overview h1 {
 	font-size: 2.5em;
 	font-weight: 700;
 }
-.overview h2 {
+#overview .content h2 {
 	font-size: 1.32em;
 	line-height: 1.15em;
 	margin-bottom: 4px;
 }
-.overview p {
+#overview .content p {
 	font-weight: 450;
 	color: color(srgb 0.09 0.09 0.09 / 0.85);
 	color: #171717d8;
+	margin-bottom: 13px;
 }
-.overview p a {
+#overview p a {
 	color: #256cc4ff;
 }
-.overview p a:hover {
+#overview p a:hover {
 	color: #4395faff;
 }
 .column-1 {
-	width: 50%;
 	text-align: right;
 	font-style: italic;
 	margin-right: 14px;
 }
 .column-2 {
-	width: 50%;
 	margin-left: 14px;
 	padding-top: 4px;
 }
@@ -193,17 +323,17 @@ main h1 {
 	position: absolute;
 	display: inline-block;
 	padding: 10px 24px;
-	background-color: #E5F1FE;
+	background-color: #d0e6fd;
 	border-radius: 12px;
-	color: #686868;
+	color: #6c7f93;
 	font-weight: 550;
 	font-style: normal;
 }
 #faq-catch {
 	position: relative;
 	text-align: center;
-	background-color: #3A99FF;
-	color: #D6E3F8;
+	background-color: #3693f6;
+	color: #e2edff;
 }
 #faq-privacy {
 	top: 60px;

@@ -11,7 +11,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="apple-touch-icon" href="images/favicon.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="images/favicon.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="./favicon.png">
+	<meta name="theme-color" 
+	  content="#FFFFFF" 
+	  media="(prefers-color-scheme: light)">
 	<!-- OpenGraph -->
 	<meta property="og:title" content="FairMail">
 	<meta property="og:site_name" content="FairMail">
@@ -28,7 +31,7 @@
 	<meta property="twitter:image" content="images/favicon.png">
 </head>
 <body>
-	<header>
+	<header>		
 		<nav>
 			<a href="help/">Help</a>
 			<a href="docs/">Docs</a>
@@ -58,28 +61,48 @@
 		</div>
 	</header>
 	<main>
-		<div class="overview">
-			<div class="column-1">
-				<h1>It&#8217;s just email.</h1>
+		<section id="overview">
+			<div class="header">
+				<h1 class="color-purple"><em>It&#8217;s just email.</em></h1>
 			</div>
-			<div class="column-2">
-				<div>
-					<h2>Pricing: $10/year</h2>
-					<p>You could pay even less with <a href="pricing/">Resource Pricing</a> &mdash; only pay for the resources you use. If you're a <em>very large</em> user, we may ask you to use resource pricing</p>
-				</div>
-				<div>
-					<h2>Use your domain or one of ours</h2>
-					<p>Your email should be yours. It's <a href="docs/custom-domains/">super easy</a> to setup email with your domain</p>
-				</div>
-				<div>
-					<h2>No hard limits on users, domains, </br>or storage</h2>
-					<p>Setup users and routes easily with an intuitive user interface or via scripting</p>
-				</div>
-				<div>
-					<h2>Use your favorite mail app or our </br>web interface</h2>
-					<p></p>
-				</div>
+			<div class="content">
+				<h2>Pricing: $10/year</h2>
+				<p>You could pay even less with <a href="pricing/">Resource Pricing</a> &mdash; only pay for the resources you use. If you're a <em>very large</em> user, we may ask you to use resource pricing</p>
+				<h2>Use your domain or one of ours</h2>
+				<p>Your email should be yours. It's <a href="docs/custom-domains/">super easy</a> to setup email with your domain</p>
+				<h2>No hard limits on users, domains, </br>or storage</h2>
+				<p>Setup users and routes easily with an intuitive user interface or via scripting</p>
+				<h2>Use your favorite mail app or our </br>web interface</h2>
 			</div>
+		</section>
+		
+		<section id="questions">
+			<div class="header">
+				<div>
+					<h1><em>?</em></h1>
+					<h1><em>?</em></h1>
+					<h1><em>?</em></h1>
+				</div>
+				<a href="./index.html" class="focus">What's the catch?</a>
+				<a href="./index.html">Privacy</a>
+				<a href="./index.html">Getting Started</a>
+				<a href="./index.html">Support</a>
+				<a href="./index.html">Pricing</a>
+				<a href="./index.html">Security</a>
+				<a href="./index.html">Is this for me?</a>
+			</div>
+			<div class="content">
+				<h2>We deliver mail. That&#8217;s it.</h2>
+				<p>We don't waste money on advertising and marketing and we're not trying to sell you some lofty ideal. We offer a known service at a low cost, but that's it.</p>
+				<h3>Some Drawbacks</h3>
+				<p>We don't have 24/7 support</p>
+				<p>We don't (yet) offer calendar syncing</p>
+				<p>We are not for sending marketing emails or transactional emails</p>
+			</div>
+		</section>
+		
+		<div class="more-info">
+			
 		</div>
 		
 		<div class="assorted-concerns">
@@ -96,7 +119,7 @@
 				</div>
 			</div>
 			<div class="column-2" id="concern-response">
-				<h2>We deliver mail. That's it.</h2>
+				<h2>We deliver mail. That&#8217;s it.</h2>
 				<p>We don't waste money on advertising and marketing and we're not trying to sell you some lofty ideal. We offer a known service at a low cost, but that's it.</p>
 				<h3>Some Drawbacks</h3>
 				<p>We don't have 24/7 support</p>
