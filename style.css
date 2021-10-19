@@ -219,6 +219,7 @@ main h1 {
 	color: #6c7f93;
 	font-weight: 550;
 	font-style: normal;
+	height: 20px;
 }
 #questions .header a.focus {
 	background-color: #3693f6;
@@ -362,4 +363,5 @@ main h1 {
 
 footer {
 	height: 300px;
+	background-color: white;
 }
